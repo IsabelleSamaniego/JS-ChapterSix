@@ -43,8 +43,7 @@ window.addEventListener("load", function() {
         orderForm.elements.modelCost.value = modelCost.toLocaleString("en-US", {style: "currency", currency: "USD"});
 
         // Retrieve the cost of the protection plan
-        let planValue =
-        document.querySelector('input[name="plan"]:checked').value;
+        let planValue = document.querySelector('input[name="plan"]:checked').value;
 
         // Charge the plan to each item ordered
         let planCost = planValue * quantity;

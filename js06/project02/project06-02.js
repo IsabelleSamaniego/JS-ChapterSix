@@ -30,6 +30,7 @@ window.addEventListener("load", function() {
             let linkURL = evt.target.value;
 
             // 5.c. use window.open() method to open a new browser with linkURL
+            // store the window under newWin variable
             let newWin = window.open(linkURL);
         }
     }
