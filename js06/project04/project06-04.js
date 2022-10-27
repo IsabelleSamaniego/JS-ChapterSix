@@ -99,5 +99,6 @@ function filterSelect(selectList,category)
 
 // 6. selectVehicle click event
 selectVehicle.onclick = function() {
-    document.getElementById("vehicle").innerText = make.value + model.value + trim.value;
+    document.getElementById("vehicle").innerText = make.value + " " 
+    + model.value + " " + trim.value;
 }
