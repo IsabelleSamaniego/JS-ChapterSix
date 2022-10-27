@@ -10,6 +10,7 @@
       Filename: project06-04.js
 */
 
+
 // Selection lists in the web form
 let make = document.getElementById("make");
 let model = document.getElementById("model");
@@ -60,12 +61,43 @@ model.onchange = function() {
    }     
 }
 
-// 4. create showAll function
-function showAll(selectList) {
-    
-    // 4.a. declare options = collection ofoption elements within selectList
-    let options = selectList.op;
 
-    // 4.b. declare optionLength = lenght of options node list
+// 4. showAll function
+function showAll(selectList)
+{
+    // 4a. declare options
+    let options = selectList.options;
+    // 4b. declare optionLenght
     let optionLength = options.length;
+
+    // 4c. display each option
+    for(let i=0;i<optionLength;i++)
+    {
+        options[i].style.display = "block";
+    }
+}
+
+// 5. filterSelect function
+function filterSelect(selectList,category)
+{
+    // 5a. declare options list
+    let options = selectList.options;
+    // 5b. declare optionLength
+    let optionLength = options.length;
+
+    // 5c. for each option in the list
+    for(let i=0;i<optionLength;i++)
+    {
+        // if classname matches with the category
+        if(options[i].className === category) {
+            options[i].style.display = "block";
+        } else {
+            options[i].style.display = "none";
+        }
+    }
+}
+
+// 6. selectVehicle click event
+selectVehicle.onclick = function() {
+    document.getElementById("vehicle").innerText = make.value + model.value + trim.value;
 }
